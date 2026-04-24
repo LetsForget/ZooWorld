@@ -68,7 +68,7 @@ namespace ZooWorld.Animals
 
             var interactionBehaviour = interactionBehavioursFactory.Create(animalDTO);
             
-            var animal = new Animal(animalDTO.animalGroup, directionSelector, locomotion, interactionBehaviour);
+            var animal = new Animal(animalDTO.animalGroup, animalDTO.animalKey, directionSelector, locomotion, interactionBehaviour);
             var runtime = new AnimalRuntime(animal, container);
 
             var relay = container.Relay;

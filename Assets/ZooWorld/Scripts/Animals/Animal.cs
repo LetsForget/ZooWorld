@@ -15,7 +15,7 @@ namespace ZooWorld.Animals
         public string Key { get; }
         public bool IsDead { get; private set; }
         
-        public Animal(AnimalGroup group, IDirectionSelector directionSelector, ILocomotion locomotion,
+        public Animal(AnimalGroup group, string key, IDirectionSelector directionSelector, ILocomotion locomotion,
             IInteractionBehaviour interactionBehaviour)
         {
             this.directionSelector = directionSelector;
@@ -23,6 +23,7 @@ namespace ZooWorld.Animals
             this.interactionBehaviour = interactionBehaviour;
             
             Group = group;
+            Key = key;
         }
         
         public void UpdateSelf(float deltaTime)
