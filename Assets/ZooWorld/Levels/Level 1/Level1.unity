@@ -384,7 +384,7 @@ Transform:
   m_GameObject: {fileID: 852096294}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -602,6 +602,7 @@ MonoBehaviour:
   - {fileID: 1153647932}
   - {fileID: 526284443}
   - {fileID: 1225169026}
+  <Camera>k__BackingField: {fileID: 0}
 --- !u!4 &1303480779
 Transform:
   m_ObjectHideFlags: 0

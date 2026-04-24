@@ -7,7 +7,6 @@ namespace ZooWorld.Animals.Movement
         private readonly AnimalContainer container;
         private readonly LinearLocomotionConfig config;
 
-
         public LinearLocomotion(AnimalContainer container, LinearLocomotionConfig config)
         {
             this.container = container;
@@ -19,7 +18,10 @@ namespace ZooWorld.Animals.Movement
             var rigidbody = container.Rigidbody;
             var speed = config.Speed;
 
-            var nextPosition = rigidbody.position + direction * speed * deltaTime;
+            var rotation = Quaternion.LookRotation(direction);
+            rigidbody.MoveRotation(rotation);
+            
+            var nextPosition = rigidbody.position + direction * (speed * deltaTime);
             rigidbody.MovePosition(nextPosition);
         }
     }

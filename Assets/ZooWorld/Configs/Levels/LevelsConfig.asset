@@ -30,10 +30,10 @@ MonoBehaviour:
     - animalType: 10
       directionSelectType: 10
       directionSelectorConfig:
-        rid: 742256657803771989
+        rid: 742256657803771997
       locomotionType: 10
       locomotionConfig:
-        rid: 742256657803771991
+        rid: 742256657803771998
       animalContainerRef:
         m_AssetGUID: e5a62d5a13a54d3448fe26993f288c90
         m_SubObjectName: 
@@ -56,14 +56,6 @@ MonoBehaviour:
       type: {class: RandomDirectionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
       data:
         directionChangePeriod: 0.5
-    - rid: 742256657803771989
-      type: {class: RandomDirectionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
-      data:
-        directionChangePeriod: 1
-    - rid: 742256657803771991
-      type: {class: LinearLocomotionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
-      data:
-        <Speed>k__BackingField: 1
     - rid: 742256657803771993
       type: {class: RandomSpawnerConfig, ns: ZooWorld.Animals, asm: Assembly-CSharp}
       data:
@@ -73,3 +65,11 @@ MonoBehaviour:
       data:
         <JumpDistance>k__BackingField: 1
         <DelayAfterLanding>k__BackingField: 0.25
+    - rid: 742256657803771997
+      type: {class: RandomDirectionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
+      data:
+        directionChangePeriod: 3
+    - rid: 742256657803771998
+      type: {class: LinearLocomotionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
+      data:
+        <Speed>k__BackingField: 6
