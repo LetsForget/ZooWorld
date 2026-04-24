@@ -6,28 +6,25 @@ namespace ZooWorld.Animals.Movement
 {
     public class DirectionSelectorsFactory
     {
-        private readonly IReadOnlyDictionary<DirectionSelectType, IDirectionSelectorFactory> factories;
+        private readonly DiContainer container;
         private readonly ILogsWriter logsWriter;
         
         public DirectionSelectorsFactory(DiContainer container, ILogsWriter logsWriter)
         {
-            factories = new Dictionary<DirectionSelectType, IDirectionSelectorFactory>
-            {
-                { DirectionSelectType.Random, container.Instantiate<RandomSelectorFactory>() },
-            };
-
+            this.container = container;
             this.logsWriter = logsWriter;
         }
 
-        public IDirectionSelector Create(DirectionSelectType type, AnimalContainer container, IDirectionSelectorConfig config)
+        public IDirectionSelector Create(AnimalContainer animalContainer, IDirectionSelectorConfig config)
         {
-            if (!factories.TryGetValue(type, out var factory))
+            switch (config)
             {
-                logsWriter.LogError($"LocomotionFactory: Unknown locomotion type: {type}");
-                return null;
+                case RandomDirectionConfig:
+                    return container.Instantiate<RandomDirectionSelector>(new object[] { animalContainer, config });
+                default:
+                    logsWriter.LogError($"Invalid config: {config}");
+                    return null;
             }
-
-            return factory.Create(container, config);
         }
     }
 }

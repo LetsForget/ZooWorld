@@ -5,7 +5,7 @@ namespace ZooWorld.Animals
 {
     public interface IAnimalsSpawner
     {
-        void Initialize(Transform[] spawnPoints, AnimalDTO[] variants, List<AnimalRuntime> targetList);
+        void Initialize(Transform[] spawnPoints, AnimalSO[] variants, List<AnimalRuntime> targetList);
         
         void UpdateSelf(float deltaTime);
     }

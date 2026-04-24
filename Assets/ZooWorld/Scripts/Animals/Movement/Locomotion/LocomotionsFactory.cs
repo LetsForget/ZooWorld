@@ -6,29 +6,27 @@ namespace ZooWorld.Animals.Movement
 {
     public class LocomotionsFactory
     {
-        private readonly IReadOnlyDictionary<LocomotionType, ILocomotionFactory> factories;
+        private readonly DiContainer container;
         private readonly ILogsWriter logsWriter;
         
         public LocomotionsFactory(DiContainer container, ILogsWriter logsWriter)
         {
-            factories = new Dictionary<LocomotionType, ILocomotionFactory>
-            {
-                { LocomotionType.Jump, container.Instantiate<JumpLocomotionFactory>() },
-                { LocomotionType.Linear, container.Instantiate<LinearLocomotionFactory>() }
-            };
-
+            this.container = container;
             this.logsWriter = logsWriter;
         }
 
-        public ILocomotion Create(LocomotionType type, AnimalContainer container, ILocomotionConfig config)
+        public ILocomotion Create(AnimalContainer animalContainer, ILocomotionConfig config)
         {
-            if (!factories.TryGetValue(type, out var factory))
+            switch (config)
             {
-                logsWriter.LogError($"LocomotionFactory: Unknown locomotion type: {type}");
-                return null;
+                case JumpLocomotionConfig:
+                    return container.Instantiate<JumpLocomotion>(new object[] { animalContainer, config });
+                case LinearLocomotionConfig:
+                    return container.Instantiate<LinearLocomotion>(new object[] { animalContainer, config });
+                default:
+                    logsWriter.LogError("Unknown Locomotion Config");
+                    return null;
             }
-
-            return factory.Create(container, config);
         }
     }
 }

@@ -7,21 +7,22 @@ namespace ZooWorld.Animals
     {
         private readonly IDirectionSelector directionSelector;
         private readonly ILocomotion locomotion;
-        private readonly IAnimalInteractionBehaviour interactionBehaviour;
+        private readonly IInteractionBehaviour interactionBehaviour;
 
         private Vector3 currentDirection;
 
-        public AnimalType Type { get; }
+        public AnimalGroup Group { get; }
+        public string Key { get; }
         public bool IsDead { get; private set; }
         
-        public Animal(AnimalType type, IDirectionSelector directionSelector, ILocomotion locomotion,
-            IAnimalInteractionBehaviour interactionBehaviour)
+        public Animal(AnimalGroup group, IDirectionSelector directionSelector, ILocomotion locomotion,
+            IInteractionBehaviour interactionBehaviour)
         {
             this.directionSelector = directionSelector;
             this.locomotion = locomotion;
             this.interactionBehaviour = interactionBehaviour;
             
-            Type = type;
+            Group = group;
         }
         
         public void UpdateSelf(float deltaTime)

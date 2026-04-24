@@ -8,13 +8,12 @@ namespace ZooWorld.Animals
     [Serializable]
     public struct AnimalDTO
     {
-        public AnimalType animalType;
+        public AnimalGroup animalGroup;
+        public string animalKey;
         
-        public DirectionSelectType directionSelectType;
         [SerializeReference] public IDirectionSelectorConfig directionSelectorConfig;
-        
-        public LocomotionType locomotionType;
         [SerializeReference] public ILocomotionConfig locomotionConfig;
+        [SerializeReference] public IInteractionConfig interactionConfig;
         
         public AssetReference animalContainerRef;
     }

@@ -11,7 +11,7 @@ namespace ZooWorld.Animals
         private readonly AnimalFactory animalFactory;
 
         private Transform[] spawnPoints;
-        private AnimalDTO[] variants;
+        private AnimalSO[] variants;
         private List<AnimalRuntime> targetList;
         
         private DateTime lastSuccessfulSpawnTime;
@@ -23,7 +23,7 @@ namespace ZooWorld.Animals
             this.animalFactory = animalFactory;
         }
 
-        public void Initialize(Transform[] spawnPoints, AnimalDTO[] variants, List<AnimalRuntime> targetList)
+        public void Initialize(Transform[] spawnPoints, AnimalSO[] variants, List<AnimalRuntime> targetList)
         {
             this.spawnPoints = spawnPoints;
             this.variants = variants;
@@ -61,7 +61,7 @@ namespace ZooWorld.Animals
                 var spawnPoint = spawnPoints[randomSpawnPointIndex];
 
                 var randomAnimalIndex = UnityEngine.Random.Range(0, variants.Length);
-                var animalDTO = variants[randomAnimalIndex];
+                var animalDTO = variants[randomAnimalIndex].DTO;
 
                 var animal = await animalFactory.CreateAnimal(animalDTO, spawnPoint);
 

@@ -13,34 +13,9 @@ MonoBehaviour:
   m_Name: LevelsConfig
   m_EditorClassIdentifier: Assembly-CSharp::ZooWorld.Levels.LevelsConfig
   <Levels>k__BackingField:
-  - animalDTOs:
-    - animalType: 1
-      directionSelectType: 10
-      directionSelectorConfig:
-        rid: 742256657803771983
-      locomotionType: 20
-      locomotionConfig:
-        rid: 742256657803771996
-      animalContainerRef:
-        m_AssetGUID: 52fce1d1b284e354baeba55dfb6f6dca
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-    - animalType: 10
-      directionSelectType: 10
-      directionSelectorConfig:
-        rid: 742256657803771997
-      locomotionType: 10
-      locomotionConfig:
-        rid: 742256657803771998
-      animalContainerRef:
-        m_AssetGUID: e5a62d5a13a54d3448fe26993f288c90
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_SubObjectGUID: 
-        m_EditorAssetChanged: 1
-    spawnerType: 10
+  - animals:
+    - {fileID: 11400000, guid: fd4fa019a2fbd5a4eb040e2cd8c26b0f, type: 2}
+    - {fileID: 11400000, guid: c71c3fdb36633d34ea23f317266361b6, type: 2}
     spawnerConfig:
       rid: 742256657803771993
     levelSceneRef:
@@ -52,24 +27,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 742256657803771983
-      type: {class: RandomDirectionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
-      data:
-        directionChangePeriod: 0.5
     - rid: 742256657803771993
       type: {class: RandomSpawnerConfig, ns: ZooWorld.Animals, asm: Assembly-CSharp}
       data:
         spawnPeriod: 1
-    - rid: 742256657803771996
-      type: {class: JumpLocomotionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
-      data:
-        <JumpDistance>k__BackingField: 1
-        <DelayAfterLanding>k__BackingField: 0.25
-    - rid: 742256657803771997
-      type: {class: RandomDirectionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
-      data:
-        directionChangePeriod: 3
-    - rid: 742256657803771998
-      type: {class: LinearLocomotionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
-      data:
-        <Speed>k__BackingField: 6

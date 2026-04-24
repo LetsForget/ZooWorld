@@ -54,15 +54,14 @@ namespace ZooWorld.StateMachine
 
             var levelContainer = currentLevelRuntime.LevelContainer;
             
-            spawner = levelContainer.SpawnerFactory.Create(level.spawnerType, level.spawnerConfig);
+            spawner = levelContainer.SpawnerFactory.Create(level.spawnerConfig);
 
             if (spawner == null)
             {
-                logsWriter.LogError($"Failed to create spawner for '{level.spawnerType}'.");
                 return;
             }
 
-            spawner.Initialize(levelContainer.SpawnPoint, level.animalDTOs, animals);
+            spawner.Initialize(levelContainer.SpawnPoint, level.animals, animals);
         }
 
         public override void UpdateSelf(float deltaTime)
@@ -94,14 +93,14 @@ namespace ZooWorld.StateMachine
                     continue;
                 }
                 
-                switch (runtime.Animal.Type)
+                switch (runtime.Animal.Group)
                 {
-                    case AnimalType.Prey:
+                    case AnimalGroup.Prey:
                     {
                         gameplayFrame.IncreaseFirstCounter();
                         break;
                     }
-                    case AnimalType.Predator:
+                    case AnimalGroup.Predator:
                     {
                         gameplayFrame.IncreaseSecondCounter();
                         break;
@@ -121,8 +120,10 @@ namespace ZooWorld.StateMachine
         {
             if (levelsProvider.TryGetLevel(out var level))
             {
-                foreach (var animalDto in level.animalDTOs)
+                foreach (var animal in level.animals)
                 {
+                    var animalDto = animal.DTO;
+                    
                     if (animalDto.animalContainerRef == null)
                     {
                         continue;

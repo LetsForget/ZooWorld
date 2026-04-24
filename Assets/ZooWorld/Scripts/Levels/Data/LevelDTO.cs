@@ -8,9 +8,8 @@ namespace ZooWorld.Levels
     [Serializable]
     public struct LevelDTO
     {
-        public AnimalDTO[] animalDTOs;
+        public AnimalSO[] animals;
         
-        public SpawnerType spawnerType;
         [SerializeReference] public IAnimalSpawnerConfig spawnerConfig;
         
         public AssetReference levelSceneRef;

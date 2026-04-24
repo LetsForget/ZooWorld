@@ -46,10 +46,9 @@ namespace ZooWorld.Animals
             container = GameObject.Instantiate(container, spawn);
             container.transform.position = spawn.position;
             container.transform.rotation = Quaternion.identity;
-
-            var dirType = animalDTO.directionSelectType;
+            
             var dirConfig = animalDTO.directionSelectorConfig;
-            var directionSelector = directionSelectorsFactory.Create(dirType, container, dirConfig);
+            var directionSelector = directionSelectorsFactory.Create(container, dirConfig);
 
             if (directionSelector == null)
             {
@@ -57,9 +56,9 @@ namespace ZooWorld.Animals
                 return null;
             }
             
-            var locType = animalDTO.locomotionType;
+
             var locConfig = animalDTO.locomotionConfig;
-            var locomotion = locomotionsFactory.Create(locType, container, locConfig);
+            var locomotion = locomotionsFactory.Create(container, locConfig);
 
             if (locomotion == null)
             {
@@ -67,9 +66,9 @@ namespace ZooWorld.Animals
                 return null;
             }
 
-            var interactionBehaviour = interactionBehavioursFactory.Create(animalDTO.animalType);
+            var interactionBehaviour = interactionBehavioursFactory.Create(animalDTO);
             
-            var animal = new Animal(animalDTO.animalType, directionSelector, locomotion, interactionBehaviour);
+            var animal = new Animal(animalDTO.animalGroup, directionSelector, locomotion, interactionBehaviour);
             var runtime = new AnimalRuntime(animal, container);
 
             var relay = container.Relay;

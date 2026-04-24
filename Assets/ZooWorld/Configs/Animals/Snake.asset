@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc188daec1e4d62b5622664b8ced167, type: 3}
+  m_Name: Snake
+  m_EditorClassIdentifier: Assembly-CSharp::ZooWorld.Animals.AnimalSO
+  <DTO>k__BackingField:
+    animalGroup: 10
+    animalKey: snake
+    directionSelectorConfig:
+      rid: 742256657803772003
+    locomotionConfig:
+      rid: 742256657803772006
+    interactionConfig:
+      rid: 742256657803772010
+    animalContainerRef:
+      m_AssetGUID: e5a62d5a13a54d3448fe26993f288c90
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 742256657803772003
+      type: {class: RandomDirectionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
+      data:
+        directionChangePeriod: 3
+    - rid: 742256657803772006
+      type: {class: LinearLocomotionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
+      data:
+        <Speed>k__BackingField: 2
+    - rid: 742256657803772010
+      type: {class: GroupInteractionConfig, ns: ZooWorld.Animals, asm: Assembly-CSharp}
+      data:
+        groupsToEat: 010000000a000000

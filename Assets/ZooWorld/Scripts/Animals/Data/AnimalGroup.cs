@@ -1,6 +1,6 @@
 ﻿namespace ZooWorld.Animals
 {
-    public enum AnimalType
+    public enum AnimalGroup
     {
         Prey = 1,
         Predator = 10

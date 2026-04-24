@@ -1,33 +1,29 @@
-﻿using System.Collections.Generic;
-using Logging;
+﻿using Logging;
 using Zenject;
 
 namespace ZooWorld.Animals
 {
     public class SpawnerFactory
     {
-        private readonly IReadOnlyDictionary<SpawnerType, IAnimalSpawnerFactory> spawnerFactories;
+        private readonly DiContainer container;
         private readonly ILogsWriter logsWriter;
         
         public SpawnerFactory(DiContainer container, ILogsWriter logsWriter)
         {
-            spawnerFactories = new Dictionary<SpawnerType, IAnimalSpawnerFactory>
-            {
-                { SpawnerType.Random, container.Instantiate<RandomSpawnerFactory>() }
-            };
-            
+            this.container = container;
             this.logsWriter = logsWriter;
         }
         
-        public IAnimalsSpawner Create(SpawnerType spawnerType, IAnimalSpawnerConfig config)
+        public IAnimalsSpawner Create(IAnimalSpawnerConfig config)
         {
-            if (!spawnerFactories.TryGetValue(spawnerType, out var factory))
+            switch (config)
             {
-                logsWriter.LogError($"No factory for spawnerType '{spawnerType}'");
-                return null;
+                case RandomSpawnerConfig:
+                    return container.Instantiate<RandomSpawner>(new object[] { config });
+                default:
+                    logsWriter.LogError("Invalid spawner config");
+                    return null;
             }
-            
-            return factory.Create(config);
         }
     }
 }
