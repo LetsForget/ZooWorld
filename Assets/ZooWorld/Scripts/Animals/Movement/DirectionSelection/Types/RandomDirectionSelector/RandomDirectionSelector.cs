@@ -33,9 +33,9 @@ namespace ZooWorld.Animals.Movement
             lastDirectionSwitchTime = DateTime.Now;
             var newDirection = new Vector3
             {
-                x = Random.value,
+                x = Random.Range(-1f, 1f),
                 y = 0,
-                z = Random.value
+                z = Random.Range(-1f, 1f)
             };
             
             return directionChecker.CheckDirection(container, newDirection.normalized);
