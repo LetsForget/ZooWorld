@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_GUID: 174bbcabbc42b9e4e997e557e9f4850b
+  m_SerializeEntries:
+  - m_GUID: 13297469f60e0d64fb5917a027ff43f0
+    m_Address: Assets/ZooWorld/Prefabs/UI/Frames/MenuFrame.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 516af004554551645990da38d27109b4
+    m_Address: Assets/ZooWorld/Prefabs/UI/Frames/LoadingFrame.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52fce1d1b284e354baeba55dfb6f6dca
+    m_Address: Assets/ZooWorld/Prefabs/AnimalsVisual/Frog/Frog.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f81653c607693341b14a016cce6ec8d
+    m_Address: Assets/ZooWorld/Levels/Level 1/Level1.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 607747d302753f642bbf0b3ee54ae83d
+    m_Address: Assets/ZooWorld/Prefabs/UI/Frames/GameplayFrame.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5a62d5a13a54d3448fe26993f288c90
+    m_Address: Assets/ZooWorld/Prefabs/AnimalsVisual/Snake/Snake.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: bc09cfabc7910214197f5f9bf2e473d8, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c85a8b7f22a98c042a7ae1703a0ccc5d, type: 2}
+    - {fileID: 11400000, guid: a9b0bc9b797f4544fbb1aee9c5cecde5, type: 2}

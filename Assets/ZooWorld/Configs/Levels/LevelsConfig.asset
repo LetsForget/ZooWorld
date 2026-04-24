@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a32b7f7072145ed9c5e9e195f7cae10, type: 3}
+  m_Name: LevelsConfig
+  m_EditorClassIdentifier: Assembly-CSharp::ZooWorld.Levels.LevelsConfig
+  <Levels>k__BackingField:
+  - animalDTOs:
+    - animalType: 1
+      directionSelectType: 10
+      directionSelectorConfig:
+        rid: 742256657803771983
+      locomotionType: 20
+      locomotionConfig:
+        rid: 742256657803771996
+      animalContainerRef:
+        m_AssetGUID: 52fce1d1b284e354baeba55dfb6f6dca
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+    - animalType: 10
+      directionSelectType: 10
+      directionSelectorConfig:
+        rid: 742256657803771989
+      locomotionType: 10
+      locomotionConfig:
+        rid: 742256657803771991
+      animalContainerRef:
+        m_AssetGUID: e5a62d5a13a54d3448fe26993f288c90
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_SubObjectGUID: 
+        m_EditorAssetChanged: 1
+    spawnerType: 10
+    spawnerConfig:
+      rid: 742256657803771993
+    levelSceneRef:
+      m_AssetGUID: 5f81653c607693341b14a016cce6ec8d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 742256657803771983
+      type: {class: RandomDirectionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
+      data:
+        directionChangePeriod: 0.5
+    - rid: 742256657803771989
+      type: {class: RandomDirectionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
+      data:
+        directionChangePeriod: 1
+    - rid: 742256657803771991
+      type: {class: LinearLocomotionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
+      data:
+        <Speed>k__BackingField: 1
+    - rid: 742256657803771993
+      type: {class: RandomSpawnerConfig, ns: ZooWorld.Animals, asm: Assembly-CSharp}
+      data:
+        spawnPeriod: 1
+    - rid: 742256657803771996
+      type: {class: JumpLocomotionConfig, ns: ZooWorld.Animals.Movement, asm: Assembly-CSharp}
+      data:
+        <JumpDistance>k__BackingField: 1
+        <DelayAfterLanding>k__BackingField: 0.25
